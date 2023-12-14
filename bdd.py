@@ -36,7 +36,7 @@ class Bdd:
         connexion.close()
         return task
 
-    def creer_task(self):
+    def creer_task(self, name, priority, id_categorie, id_etat, date_echeance):
         """Récupère des données
 
         Returns:
@@ -52,7 +52,7 @@ class Bdd:
         connexion.close()
         return task
 
-    def update_task(self):
+    def update_task(self, name, priority, id_categorie, id_etat, date_echeance, task):
         """Récupère des données
 
         Returns:
@@ -65,13 +65,13 @@ class Bdd:
             SET name = {name},priority = {priority},
             id_categorie = {id_categorie},id_etat = {id_etat}, 
             date_echeance = {date_echeance}))
-            WHERE id_task = {tasks};"""
+            WHERE id_task = {task};"""
         resultat = curseur.execute(requete_sql)
         task = resultat.fetchall()
         connexion.close()
         return task
 
-    def delete_task(self):
+    def delete_task(self, id_task):
         """Récupère des données
 
         Returns:
@@ -81,7 +81,7 @@ class Bdd:
         curseur = connexion.cursor()
         requete_sql = f"""
             DELET FROM Task
-            WHERE id_task = {tasks};"""
+            WHERE id_task = {id_task};"""
         resultat = curseur.execute(requete_sql)
         task = resultat.fetchall()
         connexion.close()
@@ -91,3 +91,4 @@ class Bdd:
 # Mise au point de la classe Bdd seule
 if __name__ == "__main__":
     # TODO : ajoutez le code pour tester et mettre au point votre classe Bdd
+    pass
