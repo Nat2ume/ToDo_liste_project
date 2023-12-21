@@ -3,6 +3,30 @@
 
 <!-- On ajoute notre propre contenu -->
 {% block contenu %}
-    <h1>Ajouter </h1>
-    <p><strong>ToDoList</strong> de la personne 1</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bonjour v0.5</title>
+</head>
+<body>
+    <form action="/">
+        <label>Quelle tache voulez vous Ajoutez: </label>
+        <input type="text" name="nom" value="..." />
+        <br>
+        <label>Quelle niveau de priorité: </label>
+        <input type="text" name="prio" value="..." />
+        <br>
+        <label>A quelle catégorie appartient la tache: </label>
+        <input type="text" name="catégorie" value="..." />
+        <br>
+        <label>A quelle stade êtes vous sur la tache: </label>
+        <input type="text" name="stade" value="..." />
+        <br>
+        <label>Quelle est la date d'échéance: </label>
+        <input type="text" name="nom" value="AAAA/MM/JJ" />
+        <input type="submit" value="Envoyer" />
+    </form>
+</body>
+</html>
 {% endblock %}

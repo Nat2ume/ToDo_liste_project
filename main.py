@@ -7,6 +7,7 @@ gérant une liste de tâches à faire
 # Librairie(s) utilisée(s)
 from flask import *
 from bdd import*
+from sqlite3 import*
 
 
 # Création des objets Flask et Bdd
