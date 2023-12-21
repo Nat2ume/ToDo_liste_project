@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bdd</title>
+</head>
+<body>
+    <h1>Affichage Bdd</h1>
+    <p>Liste des taches dans la base de données</p>
+    <ul>
+    {% for task in todo %}
+        <li>id={{ task[0] }}, nom={{ task[1] }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

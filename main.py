@@ -6,6 +6,7 @@ gérant une liste de tâches à faire
 
 # Librairie(s) utilisée(s)
 from flask import *
+from bdd import*
 
 
 # Création des objets Flask et Bdd
@@ -42,6 +43,17 @@ def personne3():
     
     # Rendu de la vue
     return render_template("personne3.html")
+
+@app.route("/test-bdd")
+def tester_bdd():
+    # Récupération des personnes de la base de données SQLite
+    personnes = Bdd.recuperer_task()
+
+    # Transmission pour affichage
+    return render_template(
+        "todo_bdd.html",
+        personnes=personnes
+    )
 
 # Lancement du serveur
 if __name__ == "__main__":
