@@ -24,26 +24,26 @@ def accueillir():
 
 # TODO : ajoutez de nouvelles routes associées à des fonctions "contrôleur" Python
 
-@app.route("/personne1")
-def personne1():
+@app.route("/Ajouter")
+def Ajouter():
     """Gère l'accueil des utilisateurs"""
     
     # Rendu de la vue
-    return render_template("personne1.html")
+    return render_template("Ajouter.html")
 
-@app.route("/personne2")
-def personne2():
+@app.route("/Modifier")
+def Modifier():
     """Gère l'accueil des utilisateurs"""
     
     # Rendu de la vue
-    return render_template("personne2.html")
+    return render_template("Modifier.html")
 
-@app.route("/personne3")
-def personne3():
+@app.route("/Supprimer")
+def Supprimer():
     """Gère l'accueil des utilisateurs"""
     
     # Rendu de la vue
-    return render_template("personne3.html")
+    return render_template("Supprimer.html")
 
 @app.route("/bdd")
 def tester_bdd():
@@ -52,7 +52,7 @@ def tester_bdd():
     print(Task)
     # Transmission pour affichage
     return render_template(
-        "todo_bdd.html",
+        "all_bdd.html",
         Task=Task
     )
 

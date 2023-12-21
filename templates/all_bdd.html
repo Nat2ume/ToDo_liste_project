@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Bdd</title>
-</head>
-<body>
-    <h1>Affichage Bdd</h1>
+<!-- On hérite du template de base -->
+{% extends "base.html" %}
+
+<!-- On ajoute notre propre contenu -->
+{% block contenu %}
+    <h1>Bdd </h1>
     <p>Liste des taches dans la base de données</p>
     <ul>
     {% for task in Task %}
         <li>id={{ task[0] }}, nom={{ task[1] }}</li>
     {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
+
