@@ -14,16 +14,6 @@ app = Flask(__name__)
 bdd = Bdd("bdd/todo.sqlite")
 
 
-# Les routes associées aux fonctions
-@app.route("/")
-def accueillir():
-    """Gère l'accueil des utilisateurs"""
-    
-    # Rendu de la vue
-    return render_template("accueil.html")
-
-# TODO : ajoutez de nouvelles routes associées à des fonctions "contrôleur" Python
-
 @app.route("/Ajouter")
 def Ajouter():
     """Gère l'accueil des utilisateurs"""
@@ -45,14 +35,14 @@ def Supprimer():
     # Rendu de la vue
     return render_template("Supprimer.html")
 
-@app.route("/bdd")
+@app.route("/")
 def tester_bdd():
     # Récupération des personnes de la base de données SQLite
     Task = bdd.recuperer_task()
     print(Task)
     # Transmission pour affichage
     return render_template(
-        "all_bdd.html",
+        "accueil.html",
         Task=Task
     )
 
