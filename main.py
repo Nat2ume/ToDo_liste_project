@@ -11,6 +11,7 @@ from bdd import*
 
 # Création des objets Flask et Bdd
 app = Flask(__name__)
+bdd = Bdd("bdd/todo.sqlite")
 
 
 # Les routes associées aux fonctions
@@ -44,15 +45,15 @@ def personne3():
     # Rendu de la vue
     return render_template("personne3.html")
 
-@app.route("/test-bdd")
+@app.route("/bdd")
 def tester_bdd():
     # Récupération des personnes de la base de données SQLite
-    personnes = Bdd.recuperer_task()
-
+    Task = bdd.recuperer_task()
+    print(Task)
     # Transmission pour affichage
     return render_template(
         "todo_bdd.html",
-        personnes=personnes
+        Task=Task
     )
 
 # Lancement du serveur

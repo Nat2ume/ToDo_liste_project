@@ -91,4 +91,5 @@ class Bdd:
 # Mise au point de la classe Bdd seule
 if __name__ == "__main__":
     # TODO : ajoutez le code pour tester et mettre au point votre classe Bdd
-    pass
+    test = Bdd("bdd/todo.sqlite")  
+    print(test.recuperer_task())

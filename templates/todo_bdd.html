@@ -8,7 +8,7 @@
     <h1>Affichage Bdd</h1>
     <p>Liste des taches dans la base de données</p>
     <ul>
-    {% for task in todo %}
+    {% for task in Task %}
         <li>id={{ task[0] }}, nom={{ task[1] }}</li>
     {% endfor %}
     </ul>
