@@ -1,37 +1,32 @@
 h1{
     text-align: center;
-}
-
-li
-{
-    list-style-type: none;
-    text-align: center;
+    text-decoration: underline;
 }
 
 table {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
-    border: 3px solid purple;
+    background-color: rgb(252, 245, 237);
   }
   
   thead th:nth-child(1) {
-    width: 30%;
-  }
-  
-  thead th:nth-child(2) {
     width: 20%;
   }
   
+  thead th:nth-child(2) {
+    width: 12%;
+  }
+  
   thead th:nth-child(3) {
-    width: 15%;
+    width: 12%;
   }
   
   thead th:nth-child(4) {
-    width: 35%;
+    width: 12%;
   }
   
   th,
   td {
-    padding: 20px;
+    padding: 10;
   }
