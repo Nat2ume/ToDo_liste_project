@@ -3,6 +3,14 @@
 
 <!-- On ajoute notre propre contenu -->
 {% block contenu %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
     <h1>Bdd </h1>
     <p>Liste des taches dans la base de données</p>
     <h1> Nom     Priorité     Catégorie     Etat     Date d'échéance </h1>
@@ -11,4 +19,6 @@
         <li>{{ task[1] }}, {{ task[2] }},{{ task[3] }}, {{ task[4] }},{{ task[5] }}</li>
     {% endfor %}
     </ul>
+</body>
+</html>
 {% endblock %}
