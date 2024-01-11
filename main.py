@@ -36,6 +36,18 @@ def ajouter_base_donnée():
     connexion.close()
     return redirect("/")
 
+@app.route("/modif_nom", methods=["POST"])
+def ajouter_base_donnée():
+    nom_tache = request.form["nom"]
+    num_tache = request.form["num"]
+    connexion = sqlite3.connect("bdd/todo.sqlite")
+    curseur = connexion.cursor()
+    curseur.execute(f"""Insert into Task (name, priority, categorie, etat, date_echeance) 
+    Values ('{nom_tache}', '{priorite}', '{catego}', '{etat}', '{date}');""")
+    connexion.commit()
+    connexion.close()
+    return redirect("/")
+
 @app.route("/Modifier")
 def Modifier():
     """Gère l'accueil des utilisateurs"""
