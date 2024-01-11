@@ -37,17 +37,63 @@ def ajouter_base_donnée():
     connexion.close()
     return redirect("/")
 
+@app.route("/modif_prio", methods=["POST"])
+def modifier_base_donnée_prio():
+    nom_tache = request.form["prio"]
+    num_tache = request.form["num"]
+    connexion = sqlite3.connect("bdd/todo.sqlite")
+    curseur = connexion.cursor()
+    curseur.execute(f"""Update Task SET name='{nom_tache}' WHERE id_task='{num_tache}';""")
+    connexion.commit()
+    connexion.close()
+    return redirect("/")
+
+@app.route("/modif_etat", methods=["POST"])
+def modifier_base_donnée_prio():
+    nom_tache = request.form["etat"]
+    num_tache = request.form["num"]
+    connexion = sqlite3.connect("bdd/todo.sqlite")
+    curseur = connexion.cursor()
+    curseur.execute(f"""Update Task SET name='{nom_tache}' WHERE id_task='{num_tache}';""")
+    connexion.commit()
+    connexion.close()
+    return redirect("/")
+
+
+
 @app.route("/modif_nom", methods=["POST"])
-def ajouter_base_donnée():
+def modifier_base_donnée_nom():
     nom_tache = request.form["nom"]
     num_tache = request.form["num"]
     connexion = sqlite3.connect("bdd/todo.sqlite")
     curseur = connexion.cursor()
-    curseur.execute(f"""Insert into Task (name, priority, categorie, etat, date_echeance) 
-    Values ('{nom_tache}', '{priorite}', '{catego}', '{etat}', '{date}');""")
+    curseur.execute(f"""Update Task SET name='{nom_tache}' WHERE id_task='{num_tache}';""")
     connexion.commit()
     connexion.close()
     return redirect("/")
+
+@app.route("/modif_type", methods=["POST"])
+def modifier_base_donnée_nom():
+    nom_tache = request.form["type"]
+    num_tache = request.form["num"]
+    connexion = sqlite3.connect("bdd/todo.sqlite")
+    curseur = connexion.cursor()
+    curseur.execute(f"""Update Task SET name='{nom_tache}' WHERE id_task='{num_tache}';""")
+    connexion.commit()
+    connexion.close()
+    return redirect("/")
+
+@app.route("/modif_date", methods=["POST"])
+def modifier_base_donnée_nom():
+    nom_tache = request.form["date"]
+    num_tache = request.form["num"]
+    connexion = sqlite3.connect("bdd/todo.sqlite")
+    curseur = connexion.cursor()
+    curseur.execute(f"""Update Task SET name='{nom_tache}' WHERE id_task='{num_tache}';""")
+    connexion.commit()
+    connexion.close()
+    return redirect("/")
+
 
 @app.route("/Modifier")
 def Modifier():
