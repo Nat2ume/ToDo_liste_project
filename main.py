@@ -21,6 +21,13 @@ def Ajouter():
     
     # Rendu de la vue
     return render_template("Ajouter.html")
+@app.route("/Ajouter", methods=["POST"])
+def ajouter_base_donnée():
+    nom_tache = request.form["nom"]
+    priorite =request.form["prio"]
+    catego = request.form["catégorie"]
+    stade = request.form["stade"]
+    date = request.form["date"]
 
 @app.route("/Modifier")
 def Modifier():
