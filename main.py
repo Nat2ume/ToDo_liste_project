@@ -21,6 +21,7 @@ def Ajouter():
     
     # Rendu de la vue
     return render_template("Ajouter.html")
+
 @app.route("/ajouter2", methods=["POST"])
 def ajouter_base_donnée():
     nom_tache = request.form["nom"]
@@ -43,8 +44,16 @@ def Modifier():
     # Rendu de la vue
     return render_template("Modifier.html")
 
-@app.route("/supprimer2")
+
+@app.route("/Supprimer")
 def Supprimer():
+    """Gère l'accueil des utilisateurs"""
+    
+    # Rendu de la vue
+    return render_template("Supprimer.html")
+
+@app.route("/supprimer2", methods=["POST"])
+def Supprimer2():
     """Gère l'accueil des utilisateurs"""
     nom_tache = request.form["nom"]
     connexion = sqlite3.connect("bdd/todo.sqlite")
