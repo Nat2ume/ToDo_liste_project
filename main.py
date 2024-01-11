@@ -38,7 +38,7 @@ def ajouter_base_donnée():
     return redirect("/")
 
 @app.route("/modif_nom", methods=["POST"])
-def ajouter_base_donnée():
+def modifier_base_donnée():
     nom_tache = request.form["nom"]
     num_tache = request.form["num"]
     connexion = sqlite3.connect("bdd/todo.sqlite")
