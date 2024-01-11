@@ -11,14 +11,36 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
-    <h1>Bdd </h1>
-    <p>Liste des taches dans la base de données</p>
-    <h1> Nom     Priorité     Catégorie     Etat     Date d'échéance </h1>
-    <ul>
-    {% for task in Task %}
-        <li>{{ task[1] }}, {{ task[2] }},{{ task[3] }}, {{ task[4] }},{{ task[5] }}</li>
-    {% endfor %}
-    </ul>
+    <h1>Votre Base de Bonnee </h1>
+    <br>
+    <br>
+    <table>
+        <caption>
+            Liste des taches dans la base de données
+        </caption>
+        <thead>
+            <tr>    
+                <th scope="col">Nom</th>
+                <th scope="col">Clé primaire</th>
+                <th scope="col">Priorité</th>
+                <th scope="col">Catégorie</th>
+                <th scope="col">Etat</th>
+                <th scope="col">Date d'échéance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in Task %}
+            <tr>
+                <th scope="row">{{ task[1] }}</th>
+                <td>{{ task[0] }}</td>
+                <td>{{ task[2] }}</td>
+                <td>{{ task[3] }}</td>
+                <td>{{ task[4] }}</td>
+                <td>{{ task[5] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
 </body>
 </html>
 {% endblock %}
