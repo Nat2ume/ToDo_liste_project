@@ -49,7 +49,7 @@ def modifier_base_donnée_prio():
     return redirect("/")
 
 @app.route("/modif_etat", methods=["POST"])
-def modifier_base_donnée_prio():
+def modifier_base_donnée_etat():
     nom_tache = request.form["etat"]
     num_tache = request.form["num"]
     connexion = sqlite3.connect("bdd/todo.sqlite")
@@ -73,7 +73,7 @@ def modifier_base_donnée_nom():
     return redirect("/")
 
 @app.route("/modif_type", methods=["POST"])
-def modifier_base_donnée_nom():
+def modifier_base_donnée_type():
     nom_tache = request.form["type"]
     num_tache = request.form["num"]
     connexion = sqlite3.connect("bdd/todo.sqlite")
@@ -84,7 +84,7 @@ def modifier_base_donnée_nom():
     return redirect("/")
 
 @app.route("/modif_date", methods=["POST"])
-def modifier_base_donnée_nom():
+def modifier_base_donnée_date():
     nom_tache = request.form["date"]
     num_tache = request.form["num"]
     connexion = sqlite3.connect("bdd/todo.sqlite")
