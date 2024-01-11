@@ -67,11 +67,11 @@ def Supprimer():
 @app.route("/supprimer2", methods=["POST"])
 def Supprimer2():
     """Gère l'accueil des utilisateurs"""
-    nom_tache = request.form["nom"]
+    id_task = request.form["id"]
     connexion = sqlite3.connect("bdd/todo.sqlite")
     curseur = connexion.cursor()
     curseur.execute(f"""Delete from Task 
-    WHERE name='{nom_tache}';""")
+    WHERE id_task={id_task};""")
     connexion.commit()
     connexion.close()
     return redirect("/")
