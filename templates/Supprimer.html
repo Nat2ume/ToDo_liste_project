@@ -3,6 +3,19 @@
 
 <!-- On ajoute notre propre contenu -->
 {% block contenu %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bonjour v0.5</title>
+</head>
+<body>
     <h1>Supprimer</h1>
-    <p> <strong>ToDoList</strong> de la personne 3</p>
+    <form action="/">
+        <label>Quelle tache voulez vous supprimer: </label>
+        <input type="text" name="nom" value="..." />
+        <input type="submit" value="Envoyer" />
+    </form>
+</body>
+</html>
 {% endblock %}
