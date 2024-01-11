@@ -43,12 +43,18 @@ def Modifier():
     # Rendu de la vue
     return render_template("Modifier.html")
 
-@app.route("/Supprimer")
+@app.route("/supprimer2")
 def Supprimer():
     """Gère l'accueil des utilisateurs"""
-    
-    # Rendu de la vue
-    return render_template("Supprimer.html")
+    nom_tache = request.form["nom"]
+    connexion = sqlite3.connect("bdd/todo.sqlite")
+    curseur = connexion.cursor()
+    curseur.execute(f"""Delete from Task 
+    WHERE name='{nom_tache}';""")
+    connexion.commit()
+    connexion.close()
+    return redirect("/")
+
 
 @app.route("/")
 def tester_bdd():
